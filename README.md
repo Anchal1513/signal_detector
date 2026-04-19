@@ -1,84 +1,101 @@
-📡 Signal Detection System — ATS / HR Tech Modernization Detector
+# 📡 Signal Detection System — ATS / HR Tech Modernization Detector
+
 > Assignment Submission — Vikaas.ai Signal Detection Task
 
 A modular Python-based system that detects recruitment technology modernization signals from public data sources using rule-based logic.
 
-📌 Overview
+---
+
+## 📌 Overview
 
 This project identifies companies that are upgrading or transforming their hiring technology stack (e.g., ATS migration, HR transformation).
 
 It processes semi-structured data (RSS feeds or sample inputs), applies keyword-based detection, and produces structured JSON outputs that can be used for business insights or outreach automation.
 
-🎯 Objective
+---
+
+## 🎯 Objective
 
 Detect signals such as:
 
-ATS migration announcements
-HR transformation initiatives
-Recruitment automation adoption
-Hiring platform upgrades
+* ATS migration announcements
+* HR transformation initiatives
+* Recruitment automation adoption
+* Hiring platform upgrades
 
-🏗️ Project Architecture
+---
+
+## 🏗️ Project Architecture
+
+```
 signal_detector/
 │
-├── fetcher/                # input data
-├── parser/                 # Clean and process text
 ├── signals/
-│   └── ats_detector.py     # ATS modernization detection logic
-├── utils/                  # Scoring utilities
-├── output/
-│   └── signals.json        # Generated signals
-│
+│   └── ats_detector.py
+├── utils/
 ├── data/
-│   └── sample_input.json   # Example input
-│
-├── main.py                 # Entry point
+│   └── sample_input.json
+├── output/
+│   └── signals.json
+├── main.py
+├── api.py
 ├── requirements.txt
 └── README.md
+```
 
-⚙️ Setup & Installation
-1️⃣ Clone Repository
+---
+
+## ⚙️ Setup & Installation
+
+```bash
 git clone https://github.com/Anchal1513/signal_detector.git
 cd signal_detector
 
-2️⃣ Create Virtual Environment
 python -m venv venv
+venv\Scripts\activate
 
-3️⃣ Activate Environment
-venv\Scripts\activate   # Windows
-
-4️⃣ Install Dependencies
 pip install -r requirements.txt
+```
 
-▶️ How to Run
+---
+
+## ▶️ How to Run
+
+```bash
 python main.py
+```
 
-🔄 What happens when you run:
-Input data is loaded  (sample JSON)
-Text is parsed and cleaned
-ATS modernization signals are detected
-Results are saved in JSON format
+📌 Output will be generated in:
 
-📥 Example Input
+```
+output/signals.json
+```
 
-Sample input file:
+---
 
+## 📥 Example Input
+
+File:
+
+```
 data/sample_input.json
+```
 
-Example structure:
+Example:
 
+```json
 {
   "company": "Workday",
   "text": "The company is adopting Workday to improve hiring workflows.",
   "url": "https://example.com/article"
 }
+```
 
-📤 Sample Output
+---
 
-Generated output:
+## 📤 Sample Output
 
-output/signals.json
-✅ Actual Output from System
+```json
 [
   {
     "company": "Workday",
@@ -92,99 +109,115 @@ output/signals.json
     "reason": "Detected ATS modernization signal based on keyword 'Workday' indicating recruitment technology usage"
   }
 ]
+```
 
-Output will be generated in: output/signals.json
+---
 
-🧠 Detection Logic
-🔹 Keywords Used
-Workday
-SuccessFactors
-ATS migration
-HR transformation
-recruitment automation
-hiring platform upgrade
+## 🧠 Detection Logic
 
-🔹 Tool Detection
+### 🔹 Keywords Used
 
-The system extracts HR tools mentioned in the text:
+* Workday
+* SuccessFactors
+* ATS migration
+* HR transformation
+* recruitment automation
+* hiring platform upgrade
 
-Example: Workday, SuccessFactors
+### 🔹 Tool Detection
 
-🔹 Stage Detection
-Migration → if "migration" detected
-Upgrade → if "upgrade" detected
-Unknown → default (if no clear stage found)
+The system extracts HR tools mentioned in the text such as Workday and SuccessFactors.
 
-🔹 Scoring Logic
+### 🔹 Stage Detection
+
+* migration → if "migration" keyword found
+* upgrade → if "upgrade" keyword found
+* unknown → default
+
+### 🔹 Scoring Logic
+
+```
 signal_score = number_of_matched_keywords × 20
+```
 
-Example:
+---
 
-1 keyword → score = 20
-2 keywords → score = 40
-📊 Design Explanation
+## 📊 Design Explanation
 
-🔹 Data Ingestion
+### 🔹 Data Ingestion
 
-Data is collected from public sources such as RSS feeds or sample JSON files. This ensures compliance with the constraint of using only free/public data.
+Data is collected from public sources such as RSS feeds or sample JSON files. No paid APIs are used.
 
-🔹 Parsing
+### 🔹 Parsing
 
-Input text is cleaned and normalized to improve keyword matching accuracy.
+Input text is cleaned and normalized for accurate keyword matching.
 
-🔹 Signal Detection
+### 🔹 Signal Detection
 
-A rule-based approach is used where predefined keywords trigger detection of ATS modernization signals.
+A rule-based approach is used where predefined keywords trigger ATS modernization signals.
 
-🔹 Output Generation
+### 🔹 Output Generation
 
-Detected signals are stored in structured JSON format for easy downstream consumption.
+Detected signals are stored as structured JSON for downstream usage.
 
-⚠️ Assumptions
-Presence of keywords indicates potential ATS modernization
-Input data contains relevant HR or hiring-related content
-Company name is available in input data
+---
 
-❗ Limitations
-Keyword-based detection may produce false positives
-No NLP or contextual understanding
-Limited to predefined keywords and rules
+## ⚠️ Assumptions
 
-💡 Future Enhancements
-Add NLP-based context analysis
-Real-time RSS ingestion
-Support multiple signal types
-Build API using FastAPI
+* Presence of keywords indicates potential ATS modernization
+* Input data contains relevant HR or hiring-related content
+* Company name is available in input
 
-👩‍💻 Author
+---
 
-Anchal Singh
-GitHub: https://github.com/Anchal1513
+## ❗ Limitations
 
-📄 License
+* Keyword-based detection may produce false positives
+* No NLP or contextual understanding
+* Limited to predefined keywords
 
-This project is developed for assignment and educational purposes.
-
-⭐ Final Note
-
-This project demonstrates:
-
-Modular backend design
-Data ingestion from public sources
-Rule-based signal extraction
-Structured output generation
+---
 
 ## 🌐 API (Optional)
 
-Run:
+```bash
 python api.py
+```
 
-Provides endpoint for signal detection.
+Provides a simple endpoint for signal detection.
+
+---
 
 ## 📸 Screenshots
 
 ### ▶️ Running the Project
+
 ![Run](Screenshot%202026-04-17%20123114.png)
 
 ### 📤 Output File
+
 ![Output](Screenshot%202026-04-18%20131751.png)
+
+---
+
+## 👩‍💻 Author
+
+**Anchal Singh**
+GitHub: https://github.com/Anchal1513
+
+---
+
+## 📄 License
+
+This project is developed for assignment and educational purposes.
+
+---
+
+## ⭐ Final Note
+
+This project demonstrates:
+
+* Modular backend design
+* Data ingestion from public sources
+* Rule-based signal extraction
+* Structured output generation
