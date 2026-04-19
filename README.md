@@ -1,4 +1,5 @@
 📡 Signal Detection System — ATS / HR Tech Modernization Detector
+> Assignment Submission — Vikaas.ai Signal Detection Task
 
 A modular Python-based system that detects recruitment technology modernization signals from public data sources using rule-based logic.
 
@@ -16,6 +17,7 @@ ATS migration announcements
 HR transformation initiatives
 Recruitment automation adoption
 Hiring platform upgrades
+
 🏗️ Project Architecture
 signal_detector/
 │
@@ -33,23 +35,30 @@ signal_detector/
 ├── main.py                 # Entry point
 ├── requirements.txt
 └── README.md
+
 ⚙️ Setup & Installation
 1️⃣ Clone Repository
 git clone https://github.com/Anchal1513/signal_detector.git
 cd signal_detector
+
 2️⃣ Create Virtual Environment
 python -m venv venv
+
 3️⃣ Activate Environment
 venv\Scripts\activate   # Windows
+
 4️⃣ Install Dependencies
 pip install -r requirements.txt
+
 ▶️ How to Run
 python main.py
+
 🔄 What happens when you run:
 Input data is loaded  (sample JSON)
 Text is parsed and cleaned
 ATS modernization signals are detected
 Results are saved in JSON format
+
 📥 Example Input
 
 Sample input file:
@@ -63,6 +72,7 @@ Example structure:
   "text": "The company is adopting Workday to improve hiring workflows.",
   "url": "https://example.com/article"
 }
+
 📤 Sample Output
 
 Generated output:
@@ -82,6 +92,9 @@ output/signals.json
     "reason": "Detected ATS modernization signal based on keyword 'Workday' indicating recruitment technology usage"
   }
 ]
+
+Output will be generated in: output/signals.json
+
 🧠 Detection Logic
 🔹 Keywords Used
 Workday
@@ -90,15 +103,18 @@ ATS migration
 HR transformation
 recruitment automation
 hiring platform upgrade
+
 🔹 Tool Detection
 
 The system extracts HR tools mentioned in the text:
 
 Example: Workday, SuccessFactors
+
 🔹 Stage Detection
 Migration → if "migration" detected
 Upgrade → if "upgrade" detected
 Unknown → default (if no clear stage found)
+
 🔹 Scoring Logic
 signal_score = number_of_matched_keywords × 20
 
@@ -107,6 +123,7 @@ Example:
 1 keyword → score = 20
 2 keywords → score = 40
 📊 Design Explanation
+
 🔹 Data Ingestion
 
 Data is collected from public sources such as RSS feeds or sample JSON files. This ensures compliance with the constraint of using only free/public data.
@@ -127,15 +144,18 @@ Detected signals are stored in structured JSON format for easy downstream consum
 Presence of keywords indicates potential ATS modernization
 Input data contains relevant HR or hiring-related content
 Company name is available in input data
+
 ❗ Limitations
 Keyword-based detection may produce false positives
 No NLP or contextual understanding
 Limited to predefined keywords and rules
+
 💡 Future Enhancements
 Add NLP-based context analysis
 Real-time RSS ingestion
 Support multiple signal types
 Build API using FastAPI
+
 👩‍💻 Author
 
 Anchal Singh
@@ -153,3 +173,18 @@ Modular backend design
 Data ingestion from public sources
 Rule-based signal extraction
 Structured output generation
+
+## 🌐 API (Optional)
+
+Run:
+python api.py
+
+Provides endpoint for signal detection.
+
+## 📸 Screenshots
+
+### ▶️ Running the Project
+![Run](Screenshot%202026-04-17%20123114.png)
+
+### 📤 Output File
+![Output](Screenshot%202026-04-18%20131751.png)
