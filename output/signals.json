@@ -1,0 +1,16 @@
+[
+    {
+        "company": "Workday",
+        "signal_type": "ats_modernization",
+        "source_url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxObUtrRDZqcWJPdV9ZVWs0VXB0WE43QU5lOXd1c2xXZUl0a01JSWZDREVYUTZEaWhqb2xESjBrNGk0T2I4clVfVm5GZEJUMUlOMGROWHIzQTZLVkdzUVgtbTB5eHJSTUVTS1E4M2dGd21yak83NVNBQlJ1X2p2bG4zbldDTFN0VlBhV3pmYW95N2pBNlkxYWVFemlRcGxyZVk?oc=5",
+        "matched_keywords": [
+            "workday"
+        ],
+        "detected_tools": [
+            "workday"
+        ],
+        "signal_score": 40,
+        "detected_at": "2026-04-19T15:15:04.066106",
+        "reason": "Detected ATS modernization signal due to usage of tools like workday"
+    }
+]

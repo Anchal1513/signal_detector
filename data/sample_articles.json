@@ -1,0 +1,17 @@
+[
+  {
+    "company": "TechCorp",
+    "url": "https://example.com/article1",
+    "content": "TechCorp is implementing Workday to modernize HR and automate recruitment workflows."
+  },
+  {
+    "company": "BizSoft",
+    "url": "https://example.com/article2",
+    "content": "BizSoft is expanding and hiring engineers rapidly."
+  },
+  {
+    "company": "MegaCorp",
+    "url": "https://example.com/article3",
+    "content": "MegaCorp is undergoing HR transformation and moving to SuccessFactors platform."
+  }
+]
